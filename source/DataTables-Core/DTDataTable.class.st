@@ -86,8 +86,7 @@ DTDataTable >> fixedHeader [
 { #category : #options }
 DTDataTable >> fixedHeader: aBoolean [ 
 	(self optionAt: 'fixedHeader' ifAbsentPut: (DTFixedHeader new))
-		header: true;
-		offset: 50
+		header: true
 ]
 
 { #category : #initializing }
