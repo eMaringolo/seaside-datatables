@@ -78,6 +78,25 @@ DTDataTable >> deferRender: aBoolean [
 	self optionAt: 'deferRender' put: aBoolean
 ]
 
+{ #category : #'options-convenience' }
+DTDataTable >> disableFilter [
+
+	self filter: false
+]
+
+{ #category : #'options-convenience' }
+DTDataTable >> disablePagination [
+
+	self pagination: false
+]
+
+{ #category : #options }
+DTDataTable >> filter: aBoolean [
+
+	self optionAt: 'bFilter' put: aBoolean
+	
+]
+
 { #category : #'plugins-fixedHeader' }
 DTDataTable >> fixedHeader [
 	^ self optionAt: 'fixedHeader' ifAbsentPut: [ DTFixedHeader new ]
@@ -87,6 +106,12 @@ DTDataTable >> fixedHeader [
 DTDataTable >> fixedHeader: aBoolean [ 
 	(self optionAt: 'fixedHeader' ifAbsentPut: (DTFixedHeader new))
 		header: true
+]
+
+{ #category : #'options-convenience' }
+DTDataTable >> hideInfo [
+
+	self optionAt: 'info' put: false
 ]
 
 { #category : #initializing }
@@ -148,6 +173,13 @@ DTDataTable >> options [
 DTDataTable >> pageLength: anInteger [ 
 
 	self optionAt: 'pageLength' put: anInteger
+]
+
+{ #category : #options }
+DTDataTable >> pagination: aBoolean [
+
+	self optionAt: 'bPaginate' put: aBoolean
+	
 ]
 
 { #category : #options }
